@@ -1,0 +1,40 @@
+# Let's create a 2d numpy array
+
+np_2d = np.array([[1.73, 1.68, 1.71, 1.89, 1.79],
+                  [65.4, 59.2, 63.6, 88.4, 68.7]])
+
+
+#this will produce
+np_2d
+
+array([[1.73, 1.68, 1.71, 1.89, 1.79],
+      [65.4, 59.2, 63.6, 88.4, 68.7]])
+
+
+#this will produce
+np_2d.shape
+
+(2, 5) # 2 rows, 5 columns
+
+
+
+np_2d[0]
+
+array([1.73, 1.68, 1.71, 1.89, 1.79])
+
+np_2d[0][2]
+
+1.71
+
+np_2d[0, 2]
+
+1.71
+
+
+# what if you want the height and weight of the second and third family member?
+
+np_2d[:, 1:3]
+
+array([1.68, 1.71],
+      [59.2, 63.6])
+
