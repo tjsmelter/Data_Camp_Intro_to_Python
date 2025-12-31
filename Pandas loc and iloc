@@ -1,0 +1,47 @@
+loc - label based
+iloc - integer position based
+
+
+# Let's say we want to output a specific row from a data frame
+
+dataframename.loc["row_name"]
+
+brics.loc["RU"]
+
+# however this presents the data in different rows, which is not very helpful
+
+#lets try this
+
+brics.loc[["RU"]]
+
+# now the output will be shown as a dataframe
+
+Country capital area population
+RU Russia Moscow 17.1  143.5
+
+# we can also add other rows (or countries) to the list
+
+brics.loc [["RU","IN","CH"]]
+
+
+# now what if we want to do a similar call like above but this time only pull specific columns
+
+brics.loc[["RU", "IN", "CH",], ["country", "capital"]]
+
+# what if we want to select all rows but only specific columns?
+
+brics.loc[:, ["country", "capital"]]
+
+
+# what if you want to subset a datafram based on its position not its name
+# then you need to use iloc
+
+brics.iloc[[1]]
+
+# to pull rows 1-3
+
+brics.iloc[[1,2,3]]
+
+# all rows and only the country and capital columns
+
+brics.iloc[:, [0,1]]
