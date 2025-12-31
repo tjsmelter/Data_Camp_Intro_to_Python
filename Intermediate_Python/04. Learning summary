@@ -1,0 +1,31 @@
+When you left 11 hours ago, you worked on Logic, Control Flow and Filtering, chapter 3 of the course 
+Intermediate Python. Here is what you covered in your last lesson:
+
+You learned about filtering pandas DataFrames, a crucial skill for data analysis, allowing you to select 
+specific parts of your data based on conditionals. Here are the key points:
+
+Selecting DataFrame columns: You discovered how to extract a column from a DataFrame, which returns a pandas Series. 
+This is done using square brackets and the column name, e.g., brics['area'].
+Boolean indexing: You learned to perform comparisons on DataFrame columns, generating Boolean Series. 
+These Series can then be used to filter the DataFrame, selecting only rows where the condition is True. 
+For example, to filter countries with an area greater than 8 million square kilometers, you used: 
+is_huge = brics['area'] > 8.
+Using Boolean Series for filtering: You applied the Boolean Series as an index to the DataFrame to select 
+only the rows of interest, like brics[is_huge].
+Simplifying with one-liners: You combined these steps into a one-liner, directly placing the comparison inside 
+the square brackets used for indexing, e.g., brics[brics['area'] > 8].
+Advanced Boolean operations: You utilized np.logical_and() to perform element-wise logical operations, enabling 
+more complex filters, such as selecting observations within a specific range.
+Here's a snippet demonstrating how to filter for countries with an area greater than 8 million square kilometers:
+
+import pandas as pd
+
+# Assuming brics DataFrame is already defined
+is_huge = brics['area'] > 8
+huge_countries = brics[is_huge]
+print(huge_countries)
+This lesson equipped you with the ability to sift through large datasets, extracting only the data that meets 
+your criteria, an essential technique for data analysis and manipulation.
+
+The goal of the next lesson is to learn how to use while loops in Python to repeatedly execute code until a 
+specific condition is no longer true.
