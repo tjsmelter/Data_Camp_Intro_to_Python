@@ -1,0 +1,27 @@
+If you want to iterate over key value pairs in a dictionary, use the .items() method on the 
+dictionary to define the sequence in the for loop
+
+for key, val in my_dict.items():
+
+If you want to iterate over all values in a NumPy array, use the nditer function to specify
+the sequence.
+
+for val in np.nditer(my_array):
+
+
+
+** dictionaries require a method
+** NumPy arrays use functions
+
+
+
+Write a for loop that goes through each key:value pair of europe. On each iteration, 
+"the capital of x is y" should be printed out, where x is the key and y is the value of the pair.
+
+# Definition of dictionary
+europe = {'spain':'madrid', 'france':'paris', 'germany':'berlin',
+          'norway':'oslo', 'italy':'rome', 'poland':'warsaw', 'austria':'vienna' }
+          
+# Iterate over europe
+for country, capital in europe.items():
+    print("the capital of " + str(country) + " is " + str(capital))
