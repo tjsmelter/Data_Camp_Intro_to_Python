@@ -1,0 +1,8 @@
+# when the name is just a column, this is how we have to subset
+
+dogs[dogs['name'].isin(['Bella','Stella'])]
+
+# But when we change the name to the index, it makes subsetting simpler
+
+dogs_ind.loc[['Bella','Stella']]
+
