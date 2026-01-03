@@ -3,6 +3,17 @@
 dogs[dogs['name'].isin(['Bella','Stella'])]
 
 # But when we change the name to the index, it makes subsetting simpler
+# We will use 'loc' here, which is a subsetting method that allows us to filter on index values
 
 dogs_ind.loc[['Bella','Stella']]
 
+
+# index values don't need to be unique
+
+dogs_ind2 = dogs.set_index("breed")
+print(dogs_ind2)
+
+# Then if we subset on 'Labrador'
+# We will get the two different labradors that are contained in the dataset
+
+dogs_ind2.loc['Labrador']
