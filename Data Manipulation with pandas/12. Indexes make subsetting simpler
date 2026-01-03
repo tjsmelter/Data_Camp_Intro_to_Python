@@ -17,3 +17,32 @@ print(dogs_ind2)
 # We will get the two different labradors that are contained in the dataset
 
 dogs_ind2.loc['Labrador']
+
+# You can also use multiple indexes (i.e., hierarchical indexes) 
+# In this case 'color' is nested within the outer level 'breed'
+
+dogs_ind3 = dogs.set_index(['breed', 'color'])
+print(dogs_ind3)
+
+# In order to subset the outer level
+
+dogs_ind3.loc[['Labrador', 'Chihuahua']]
+
+# In order to subset on inner levels use a list of tuples
+# The first value specifies the outer and second the inner level
+# The resulting rows have to match all conditions from the tuple
+
+dogs_ind3.loc[[('Labrador', 'Brown'), ('Chihuahua', 'Tan')]]
+
+# You can use sort_index() which by default sorts index values from outer to inner
+
+dogs_ind3.sort_index()
+
+# You can control the sorting by passing lists to the level and ascending arguments
+
+dogs_ind3.sort_index(level=['color','breed'],ascending=[True,False])
+
+# Indexing has some downsides though which include the fact that:
+# indexes are just data
+# indexes violate 'tidy data' principles
+# and you need to learn two syntaxes, the one for indexes and the one for columns
