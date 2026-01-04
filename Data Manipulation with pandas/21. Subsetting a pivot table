@@ -1,0 +1,11 @@
+#Pivot tables are just data frames with sorted indexes
+#Create a pivot table with breed as the index, color as the columns, and height as the value 
+
+dogs_height_by_breed_vs_color = dog_pack.pivot_table("height_cm", index="breed", columns="color")
+
+# loc and slicing options are ideal for subsetting pivot tables
+
+# summary statistic methods have an axis argument, the default value is "index" 
+# which means calculate the statistic across rows
+
+# to caluculate summary statistics across columns, set the axis to "columns"
